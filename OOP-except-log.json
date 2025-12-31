@@ -1,0 +1,281 @@
+[
+{
+"id": 1,
+"type": "single_choice",
+"question": "<h3>Иерархия исключений</h3><p>От какого класса рекомендуется наследовать собственные исключения в пользовательском коде?</p>",
+"options": [
+"BaseException",
+"Exception",
+"Object",
+"StandardError"
+]
+},
+{
+"id": 2,
+"type": "ordering",
+"question": "<h3>Порядок блоков</h3><p>Расставьте блоки обработки исключений в правильном порядке их следования в коде:</p>",
+"options": [
+"try",
+"except",
+"else",
+"finally"
+]
+},
+{
+"id": 3,
+"type": "code_fragment",
+"question": "<h3>Создание исключения</h3><p>Объявите класс пользовательского исключения <code>NetworkError</code>, который наследуется от базового класса для ошибок:</p>",
+"prefix": "",
+"initial_code": "class NetworkError():",
+"suffix": " pass"
+},
+{
+"id": 4,
+"type": "single_choice",
+"question": "<h3>Логирование</h3><p>Какой метод логгера автоматически добавляет стек-трейс (traceback) к сообщению?</p>",
+"options": [
+"logger.error()",
+"logger.critical()",
+"logger.exception()",
+"logger.trace()"
+]
+},
+{
+"id": 5,
+"type": "code",
+"question": "<h3>Декоратор-логгер</h3><p>Напишите декоратор <code>log_errors</code>, который оборачивает функцию в блок try-except. Если возникает <code>ValueError</code>, он должен вывести сообщение 'Error caught' и вернуть <code>None</code>. В остальных случаях функция работает как обычно.</p>",
+"initial_code": "def log_errors(func):\n # Ваш код здесь\n pass"
+},
+{
+"id": 6,
+"type": "ordering",
+"question": "<h3>Уровни логирования</h3><p>Расположите уровни логирования в порядке возрастания серьезности (от самого низкого к самому высокому):</p>",
+"options": [
+"DEBUG",
+"INFO",
+"WARNING",
+"ERROR",
+"CRITICAL"
+]
+},
+{
+"id": 7,
+"type": "code_fragment",
+"question": "<h3>Настройка logging</h3><p>Настройте базовую конфигурацию логирования, установив уровень вывода на <code>INFO</code>:</p>",
+"prefix": "import logging\n",
+"initial_code": "logging.basicConfig(=logging.INFO)",
+"suffix": ""
+},
+{
+"id": 8,
+"type": "multi_choice",
+"question": "<h3>BaseException vs Exception</h3><p>Какие из перечисленных исключений наследуются напрямую от <code>BaseException</code>, но НЕ от <code>Exception</code>? (то есть их не стоит ловить через <code>except Exception</code>)</p>",
+"options": [
+"KeyboardInterrupt",
+"SystemExit",
+"ValueError",
+"RuntimeError",
+"GeneratorExit"
+]
+},
+{
+"id": 9,
+"type": "input",
+"question": "<h3>Ключевое слово</h3><p>Какое ключевое слово используется для ручного возбуждения исключения в коде?</p>"
+},
+{
+"id": 10,
+"type": "code_fragment",
+"question": "<h3>Инициализация исключения</h3><p>Допишите метод <code>init</code> для сохранения кода ошибки:</p>",
+"prefix": "class ApiError(Exception):\n def init(self, message, code):\n ",
+"initial_code": "super().init()",
+"suffix": " self.code = code"
+},
+{
+"id": 11,
+"type": "single_choice",
+"question": "<h3>Блок else</h3><p>В каком случае выполняется блок <code>else</code> в конструкции <code>try-except-else</code>?</p>",
+"options": [
+"Всегда после блока try.",
+"Только если в блоке try НЕ возникло исключение.",
+"Только если в блоке try возникло исключение.",
+"Если исключение было поймано, но не обработано."
+]
+},
+{
+"id": 12,
+"type": "ordering",
+"question": "<h3>Иерархия наследования</h3><p>Расставьте классы в порядке наследования от общего к частному:</p>",
+"options": [
+"BaseException",
+"Exception",
+"ArithmeticError",
+"ZeroDivisionError"
+]
+},
+{
+"id": 13,
+"type": "code",
+"question": "<h3>Пользовательское исключение</h3><p>Реализуйте класс исключения <code>NegativeValueError</code>, который при инициализации принимает число, а при преобразовании в строку (<code>str</code>) возвращает сообщение: 'Значение X недопустимо, так как оно отрицательное'.</p>",
+"initial_code": "class NegativeValueError(Exception):\n pass"
+},
+{
+"id": 14,
+"type": "code_fragment",
+"question": "<h3>Chaining exceptions</h3><p>Используйте синтаксис для явного связывания исключений (exception chaining), чтобы показать, что <code>ValueError</code> вызвано предыдущей ошибкой <code>e</code>:</p>",
+"prefix": "try:\n setup()\nexcept KeyError as e:\n ",
+"initial_code": "raise ValueError('Configuration bad') ____ e",
+"suffix": ""
+},
+{
+"id": 15,
+"type": "multi_choice",
+"question": "<h3>Атрибуты исключения</h3><p>Какие стандартные атрибуты или методы обычно доступны у объекта исключения?</p>",
+"options": [
+"args",
+"str",
+"traceback",
+"timestamp",
+"with_traceback()"
+]
+},
+{
+"id": 16,
+"type": "single_choice",
+"question": "<h3>Логирование по умолчанию</h3><p>Какой уровень логирования установлен в модуле <code>logging</code> по умолчанию (если не менять настройки)?</p>",
+"options": [
+"DEBUG",
+"INFO",
+"WARNING",
+"ERROR"
+]
+},
+{
+"id": 17,
+"type": "code_fragment",
+"question": "<h3>Получение логгера</h3><p>Создайте именованный логгер для текущего модуля:</p>",
+"prefix": "import logging\n",
+"initial_code": "logger = logging.getLogger()",
+"suffix": ""
+},
+{
+"id": 18,
+"type": "input",
+"question": "<h3>Атрибут аргументов</h3><p>В каком атрибуте экземпляра исключения хранится кортеж аргументов, переданных при его создании?</p>"
+},
+{
+"id": 19,
+"type": "code",
+"question": "<h3>Класс-логгер</h3><p>Создайте класс <code>AppLogger</code>. В конструкторе он должен принимать имя файла. Метод <code>log(message)</code> должен открывать этот файл и дописывать туда сообщение с новой строки. Обработку ошибок открытия файла реализовывать не нужно.</p>",
+"initial_code": "class AppLogger:\n def init(self, filename):\n pass\n\n def log(self, message):\n pass"
+},
+{
+"id": 20,
+"type": "single_choice",
+"question": "<h3>Raise без аргументов</h3><p>Что делает ключевое слово <code>raise</code> без аргументов внутри блока <code>except</code>?</p>",
+"options": [
+"Возбуждает новое исключение RuntimeError.",
+"Повторно возбуждает текущее перехваченное исключение.",
+"Останавливает выполнение программы без ошибки.",
+"Ничего не делает."
+]
+},
+{
+"id": 21,
+"type": "code_fragment",
+"question": "<h3>Захват объекта исключения</h3><p>Допишите код, чтобы перехватить <code>TypeError</code> и сохранить экземпляр ошибки в переменную <code>err</code>:</p>",
+"prefix": "try:\n x = len(5)\n",
+"initial_code": "except TypeError ____ err:",
+"suffix": " print(err)"
+},
+{
+"id": 22,
+"type": "multi_choice",
+"question": "<h3>Handler-ы логирования</h3><p>Какие из перечисленных классов являются стандартными обработчиками (Handlers) в библиотеке <code>logging</code>?</p>",
+"options": [
+"StreamHandler",
+"FileHandler",
+"ConsoleListener",
+"RotatingFileHandler",
+"EmailDispatcher"
+]
+},
+{
+"id": 23,
+"type": "ordering",
+"question": "<h3>Жизненный цикл обработки</h3><p>Упорядочите этапы обработки записи лога (LogRecord):</p>",
+"options": [
+"Logger (создание записи)",
+"Filter (фильтрация на уровне логгера)",
+"Handler (отправка в место назначения)",
+"Formatter (форматирование текста)"
+]
+},
+{
+"id": 24,
+"type": "single_choice",
+"question": "<h3>try-finally</h3><p>Что выведет следующий код?</p><pre><code>try:\n return 1\nfinally:\n return 2</code></pre>",
+"options": [
+"1",
+"2",
+"RuntimeError",
+"None"
+]
+},
+{
+"id": 25,
+"type": "input",
+"question": "<h3>Модуль</h3><p>Как называется встроенный модуль Python, предоставляющий стандартную систему логирования?</p>"
+},
+{
+"id": 26,
+"type": "single_choice",
+"question": "<h3>Форматирование строк</h3><p>Какой способ передачи переменных в логгер является рекомендуемым (lazy logging)?</p>",
+"options": [
+"logger.debug(f'User {id}')",
+"logger.debug('User ' + str(id))",
+"logger.debug('User %s', id)",
+"logger.debug('User {}'.format(id))"
+]
+},
+{
+"id": 27,
+"type": "code_fragment",
+"question": "<h3>Вызов ошибки</h3><p>Вызовите исключение <code>NotImplementedError</code>, если метод абстрактного класса был вызван напрямую:</p>",
+"prefix": "def save(self):\n ",
+"initial_code": "____ NotImplementedError('Method must be defined in subclass')",
+"suffix": ""
+},
+{
+"id": 28,
+"type": "multi_choice",
+"question": "<h3>Множественная обработка</h3><p>Выберите верные способы обработки нескольких типов исключений в одном блоке <code>except</code>:</p>",
+"options": [
+"except (ValueError, TypeError):",
+"except ValueError or TypeError:",
+"except ValueError, TypeError:",
+"except [ValueError, TypeError]:"
+]
+},
+{
+"id": 29,
+"type": "single_choice",
+"question": "<h3>Исключения в конструкторе</h3><p>Что произойдет, если в методе <code>init</code> класса возникнет исключение?</p>",
+"options": [
+"Объект будет создан, но будет 'сломан'.",
+"Вернется None вместо объекта.",
+"Создание объекта прервется, переменной не будет присвоена ссылка, исключение поднимется выше.",
+"Вызовется деструктор del немедленно."
+]
+},
+{
+"id": 30,
+"type": "ordering",
+"question": "<h3>Иерархия LookupError</h3><p>Расположите исключения в порядке иерархии (от родителя к потомку):</p>",
+"options": [
+"Exception",
+"LookupError",
+"IndexError"
+]
+}
+]
